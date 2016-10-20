@@ -20,8 +20,8 @@ module.exports = {
         loaders: [
             //{test: /\.css$/, loader: 'style!css'},
             //{ test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
-            //{test: /\.less$/, loader: 'style!css!less'},
-            {test: /\.less$/,loader: ExtractTextPlugin.extract('style','css','less') }
+            //{test: /\.less$/, loader: 'css!less'},
+            {test: /\.less$/,loader: ExtractTextPlugin.extract("css!less") }
         ]
     },
     //其它解决方案配置
@@ -33,7 +33,7 @@ module.exports = {
             filename: 'index.html',
             template: './src/template/index.html'
         }),
-        new ExtractTextPlugin('app.css')
+        new ExtractTextPlugin('[name].css')
         // new webpack.ProvidePlugin({
         //     $: "jquery",
         //     jQuery: "jquery",
