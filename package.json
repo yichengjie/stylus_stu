@@ -1,0 +1,33 @@
+{
+  "name": "stylus_stu",
+  "version": "1.0.0",
+  "description": "stylus study demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yichengjie/stylus_stu.git"
+  },
+  "keywords": [
+    "yicj",
+    "stylus"
+  ],
+  "author": "yicj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yichengjie/stylus_stu/issues"
+  },
+  "homepage": "https://github.com/yichengjie/stylus_stu#readme",
+  "devDependencies": {
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.22.0",
+    "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.3.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
