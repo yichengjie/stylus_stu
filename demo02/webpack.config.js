@@ -2,7 +2,7 @@ var webpack = require('webpack') ;
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 //let ExtractTextPlugin = require('extract-text-webpack-plugin');
 //let extractLESS = new ExtractTextPlugin('[name].css');
-//var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
  
 module.exports = {
@@ -19,7 +19,8 @@ module.exports = {
         //加载器配置
         loaders: [
             //{test: /\.css$/, loader: 'style!css'},
-            {test: /\.less$/, loader: 'style!css!less'},
+             { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
+            //{test: /\.less$/, loader: 'style!css!less'},
             // {test: /\.less$/,loader: ExtractTextPlugin.extract('style','css','less') }
         ]
     },
@@ -32,7 +33,7 @@ module.exports = {
             filename: 'index.html',
             template: './src/template/index.html'
         }),
-        // ,new ExtractTextPlugin('app.css')
+         ,new ExtractTextPlugin('app.css')
         // new webpack.ProvidePlugin({
         //     $: "jquery",
         //     jQuery: "jquery",

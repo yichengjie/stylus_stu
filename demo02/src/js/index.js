@@ -1,1 +1,1 @@
-require('../style/less/index.less') ;
+require('../style/less/index.css') ;
