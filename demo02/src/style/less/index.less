@@ -130,4 +130,75 @@ div{
   background-color: green;
   .pos(r) ;
 }
+/**
+五、运算
+！！！【加减】运算与前一个变量间有空格，否则出错
+*/
+@abase:300px;
+.box4{
+  width: (@abase - 20);//变量和运算符之前有空格
+  height: @abase + 3 ;
+  height: @abase / 2;
+  color: #000 +100 ;
+  .border;
+}
+/**
+六、嵌套规则
+*/
+/*
+一般写ul li a 的方式
+.list{}
+.list li{}
+.list a {}
+.list a::hover{}
+.list span{}
+*/
+.list{
+  width: 800px;
+  margin: 30px auto ;
+  padding: 0 ;
+  list-style: none ;
+  li{
+    height: 30px;
+    line-height: 30px;
+    background-color: pink;
+    margin-bottom: 5px ;
+  }
+  a{
+    display: block;
+    float: left ;
+    //&符号代表上一层选择器
+    &:hover{
+      color: red;
+    }
+  }
+  span{
+    display: block;
+    float: right;
+  }
+}
+/**
+七、@arguments变量
+ @arguments代表参数中的所有参数
+*/
+.border_arg(@w:30px,@c:red,@sty:solid){
+  border: @arguments;//等价于 border：@w @c @sty
+}
+/**
+八。避免编译和important
+  在less中，可能用到一些非正规的或则不需要计算的内容时，
+  前面加~符号
+*/
+//8.1避免编译
+.test_no1{
+  width: ~'calc(300px - 30px)'//特殊方法，需要浏览器计算
+}
+.test_no2{
+  width: calc(300px - 30px) ;//对比上面的
+}
+//8.2 important，为所有的引用属性加上important
+.test_important{
+  .border!important;
+}
+
 
